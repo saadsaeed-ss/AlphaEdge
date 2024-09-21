@@ -18,7 +18,6 @@ export default function RootLayout({
         {/* Additional meta tags or links can be added here */}
       </head>
       <body>
-        <Navbar />
         {children}
       </body>
     </html>
