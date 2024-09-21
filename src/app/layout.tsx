@@ -4,8 +4,7 @@ import Navbar from "@/components/Navbar";
 
 export const metadata: Metadata = {
   title: "AlphaEdge Solutions",
-  description: `AlphaEdge Solutions,
-integrating Id8edge's tools`,
+  description: `AlphaEdge Solutions, integrating Id8edge's tools`,
 };
 
 export default function RootLayout({
@@ -15,7 +14,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        {/* Additional meta tags or links can be added here */}
+      </head>
       <body>
+        <Navbar />
         {children}
       </body>
     </html>

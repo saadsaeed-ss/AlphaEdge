@@ -26,7 +26,6 @@ const ToolsSec = () => {
   const handleClick = (num: number) => {
     console.log(`Button clicked in box ${num}`);
   };
-  
 
   return (
     <Box sx={{ padding: { xs: "20px", md: "50px 80px" }, mb: 5 }}>
@@ -47,7 +46,7 @@ const ToolsSec = () => {
       >
         Welcome to AlphaEdge Solutions,
         <br />
-        integrating Id8edge's tools
+        integrating Id8edge&apos;s tools {/* Changed here */}
       </Typography>
 
       <Box

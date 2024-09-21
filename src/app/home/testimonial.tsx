@@ -1,6 +1,6 @@
 "use client"; // This is a Client Component for Next.js
 
-import { Box, Typography, Button } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
 import EastIcon from "@mui/icons-material/East";
 import React, { useRef } from "react"; 
@@ -29,7 +29,7 @@ const TestioMonials = () => {
     },
     {
       id: 3,
-      text: `"Thanks to their creative campaigns, we’ve strengthened our brand presence in the market. The collaboration with AlphaEdge Solutions has been seamless, and their creative team really knows how to connect with the audience. Their efforts have made a remarkable impact on our visibility."`,
+      text: `"Thanks to their creative campaigns, we've strengthened our brand presence in the market. The collaboration with AlphaEdge Solutions has been seamless, and their creative team really knows how to connect with the audience. Their efforts have made a remarkable impact on our visibility."`,
       name: "Sophia Lee",
       desc: "Marketing Director at NextGen",
       img: "/assets/tdp.svg",
@@ -43,7 +43,7 @@ const TestioMonials = () => {
     },
     {
       id: 5,
-      text: `"We’re thrilled with the results! Their team helped us achieve our goals in record time. The insights and support provided by AlphaEdge Solutions have been instrumental in our success, allowing us to navigate challenges effectively and seize new opportunities."`,
+      text: `"We're thrilled with the results! Their team helped us achieve our goals in record time. The insights and support provided by AlphaEdge Solutions have been instrumental in our success, allowing us to navigate challenges effectively and seize new opportunities."`,
       name: "Jessica Park",
       desc: "VP of Growth at InnovateX",
       img: "/assets/tdp.svg",
@@ -76,7 +76,7 @@ const TestioMonials = () => {
                       height={60} 
                       style={{ borderRadius: "50%" }} 
                     />
-                    <div style={{ display: "flex", flexDirection: "column", marginLeft:"10px" }}>
+                    <div style={{ display: "flex", flexDirection: "column", marginLeft: "10px" }}>
                       <Typography sx={{ fontSize: "12px", fontWeight: 600, color: "#010205", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
                         {item.name}
                       </Typography>
