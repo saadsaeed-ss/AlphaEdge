@@ -1,28 +1,31 @@
 "use client";
 
-import React, { useState } from 'react';
-import { AppBar, Toolbar, Typography, Button, Box, Container, Drawer, IconButton, useMediaQuery, useTheme } from '@mui/material';
-import Link from 'next/link';
-import Image from 'next/image';
-import MenuIcon from '@mui/icons-material/Menu';
-
-const navLinkStyle = {
-  color: 'inherit',
-  textDecoration: 'none',
-  cursor: 'pointer',
-  fontFamily: `'Plus Jakarta Sans', sans-serif`,
-  fontWeight: 600,
-};
-
-const buttonStyle = {
-  fontFamily: `'Plus Jakarta Sans', sans-serif`,
-  minWidth: '120px',
-};
+import React, { useState, useEffect } from "react";
+import {
+  AppBar,
+  Toolbar,
+  Typography,
+  Button,
+  Box,
+  Drawer,
+  IconButton,
+  useMediaQuery,
+  useTheme,
+} from "@mui/material";
+import Link from "next/link";
+import Image from "next/image";
+import MenuIcon from "@mui/icons-material/Menu";
 
 const Navbar: React.FC = () => {
   const [drawerOpen, setDrawerOpen] = useState(false);
+  const [currentPath, setCurrentPath] = useState<string>("");
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down('md'));
+  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
+
+  // Update currentPath on client-side
+  useEffect(() => {
+    setCurrentPath(window.location.pathname);
+  }, []);
 
   const handleDrawerToggle = () => {
     setDrawerOpen(!drawerOpen);
@@ -30,10 +33,21 @@ const Navbar: React.FC = () => {
 
   const drawerContents = (
     <Box sx={{ width: 250, padding: 2 }}>
-      <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
-        {['Home', 'About', 'Services', 'Blog', 'Contact'].map((text) => (
+      <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
+        {["Home", "About", "Services", "Blog", "Contact"].map((text) => (
           <Link key={text} href={`/${text.toLowerCase()}`} passHref>
-            <Typography component="span" sx={navLinkStyle} onClick={handleDrawerToggle}>
+            <Typography
+              component="span"
+              sx={{
+                ...navLinkStyle,
+                borderBottom:
+                  currentPath === `/${text.toLowerCase()}` ||
+                  (currentPath === "/" && text === "Home")
+                    ? "2px solid #020407"
+                    : "none",
+              }}
+              onClick={handleDrawerToggle}
+            >
               {text}
             </Typography>
           </Link>
@@ -43,13 +57,13 @@ const Navbar: React.FC = () => {
             variant="contained"
             sx={{
               ...buttonStyle,
-              backgroundColor: 'black',
-              color: 'white',
-              textTransform: 'none',
-              borderRadius: '20px',
-              width: '100%',
-              '&:hover': {
-                backgroundColor: '#333',
+              backgroundColor: "black",
+              color: "white",
+              textTransform: "none",
+              borderRadius: "20px",
+              width: "100%",
+              "&:hover": {
+                backgroundColor: "#333",
               },
             }}
             onClick={handleDrawerToggle}
@@ -62,13 +76,13 @@ const Navbar: React.FC = () => {
             variant="outlined"
             sx={{
               ...buttonStyle,
-              borderColor: 'black',
-              color: 'black',
-              textTransform: 'none',
-              borderRadius: '20px',
-              width: '100%',
-              '&:hover': {
-                backgroundColor: '#f5f5f5',
+              borderColor: "black",
+              color: "black",
+              textTransform: "none",
+              borderRadius: "20px",
+              width: "100%",
+              "&:hover": {
+                backgroundColor: "#f5f5f5",
               },
             }}
             onClick={handleDrawerToggle}
@@ -81,49 +95,79 @@ const Navbar: React.FC = () => {
   );
 
   return (
-    <Container maxWidth="xl" sx={{ paddingTop: '20px' }}>
-      <AppBar position="static" color="transparent" elevation={0}>
-        <Toolbar sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: '100%' }}>
+    <Box sx={{ width: "100%", padding: { xs: "20px", md: "20px 80px" } }}>
+      <AppBar
+        position="static"
+        color="transparent"
+        elevation={0}
+        sx={{ padding: 0 }}
+      >
+        <Toolbar
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+            width: "100%",
+            paddingLeft: 0,
+            paddingRight: 0,
+            "@media (min-width: 600px)": {
+              paddingLeft: 0, // Override padding at min-width 600px
+              paddingRight: 0, // Override padding at min-width 600px
+            },
+          }}
+        >
           {/* Logo Section */}
-          <Box sx={{ display: 'flex', alignItems: 'center', flexGrow: 1 }}>
+          <Box sx={{ display: "flex", alignItems: "center", flexGrow: 1 }}>
             <Link href="/" passHref>
               <Image
                 src="/assets/alphaLogo.svg"
                 alt="Logo"
                 width={60}
                 height={40}
-                style={{ cursor: 'pointer' }}
+                style={{ cursor: "pointer" }}
               />
             </Link>
 
             {/* Menu Links (after logo) */}
             {!isMobile && (
-              <Box sx={{ display: 'flex', gap: 4, marginLeft: '80px' }}>
-                {['Home', 'About', 'Services', 'Blog', 'Contact'].map((text) => (
-                  <Link key={text} href={`/${text.toLowerCase()}`} passHref>
-                    <Typography component="span" sx={navLinkStyle}>
-                      {text}
-                    </Typography>
-                  </Link>
-                ))}
+              <Box sx={{ display: "flex", gap: 4, marginLeft: "80px" }}>
+                {["Home", "About", "Services", "Blog", "Contact"].map(
+                  (text) => (
+                    <Link key={text} href={`/${text.toLowerCase()}`} passHref>
+                      <Typography
+                        component="span"
+                        sx={{
+                          ...navLinkStyle,
+                          borderBottom:
+                            currentPath === `/${text.toLowerCase()}` ||
+                            (currentPath === "/" && text === "Home")
+                              ? "2px solid #020407"
+                              : "none",
+                        }}
+                      >
+                        {text}
+                      </Typography>
+                    </Link>
+                  )
+                )}
               </Box>
             )}
           </Box>
 
           {/* Login/Signup Buttons */}
           {!isMobile && (
-            <Box sx={{ display: 'flex', gap: 2 }}>
+            <Box sx={{ display: "flex", gap: 2 }}>
               <Link href="/login" passHref>
                 <Button
                   variant="contained"
                   sx={{
                     ...buttonStyle,
-                    backgroundColor: 'black',
-                    color: 'white',
-                    textTransform: 'none',
-                    borderRadius: '20px',
-                    '&:hover': {
-                      backgroundColor: '#333',
+                    backgroundColor: "black",
+                    color: "white",
+                    textTransform: "none",
+                    borderRadius: "20px",
+                    "&:hover": {
+                      backgroundColor: "#333",
                     },
                   }}
                 >
@@ -135,12 +179,12 @@ const Navbar: React.FC = () => {
                   variant="outlined"
                   sx={{
                     ...buttonStyle,
-                    borderColor: 'black',
-                    color: 'black',
-                    textTransform: 'none',
-                    borderRadius: '20px',
-                    '&:hover': {
-                      backgroundColor: '#f5f5f5',
+                    borderColor: "black",
+                    color: "black",
+                    textTransform: "none",
+                    borderRadius: "20px",
+                    "&:hover": {
+                      backgroundColor: "#f5f5f5",
                     },
                   }}
                 >
@@ -152,14 +196,14 @@ const Navbar: React.FC = () => {
 
           {/* Mobile Menu Button */}
           {isMobile && (
-            <Box sx={{ display: 'flex', alignItems: 'center' }}>
+            <Box sx={{ display: "flex", alignItems: "center" }}>
               <IconButton
                 edge="end"
                 color="inherit"
                 aria-label="menu"
                 onClick={handleDrawerToggle}
                 sx={{
-                  marginLeft: 'auto', // Align it to the right
+                  marginLeft: "auto",
                 }}
               >
                 <MenuIcon />
@@ -173,8 +217,24 @@ const Navbar: React.FC = () => {
           </Drawer>
         </Toolbar>
       </AppBar>
-    </Container>
+    </Box>
   );
+};
+
+// Responsive font sizes using rem
+const navLinkStyle = {
+  color: "inherit",
+  textDecoration: "none",
+  fontFamily: `'Plus Jakarta Sans', sans-serif`,
+  cursor: "pointer",
+  fontWeight: 600,
+  fontSize: { xs: "0.875rem", sm: "1rem", md: "1.125rem" }, // Responsive font size in rem
+};
+
+const buttonStyle = {
+  fontFamily: `'Plus Jakarta Sans', sans-serif`,
+  minWidth: "120px",
+  fontSize: { xs: "0.875rem", sm: "1rem", md: "1.125rem" }, // Responsive font size in rem
 };
 
 export default Navbar;
