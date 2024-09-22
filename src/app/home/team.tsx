@@ -56,6 +56,7 @@ const TeamSec = () => {
             justifyContent: "space-between",
             alignItems: "center",
             fontFamily: "'Plus Jakarta Sans', sans-serif",
+            textAlign: {xs:"center", md : "left"}
           }}
         >
           Meet the Minds Behind the Innovation

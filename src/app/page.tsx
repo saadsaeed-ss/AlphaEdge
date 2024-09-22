@@ -10,6 +10,7 @@ import Footer from '@/components/Footer';
 import StartupSec from './home/startup';
 import TestioMonials from './home/testimonial';
 import TeamSec from './home/team';
+import WorkWithUs from './home/workWithUs';
 
 
 
@@ -22,6 +23,7 @@ export default function Home() {
       <StartupSec/>
       <TestioMonials/>
       <TeamSec/>
+      <WorkWithUs/>
       <Footer/>
       
     </>

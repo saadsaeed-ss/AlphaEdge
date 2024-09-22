@@ -207,7 +207,6 @@ const HeroSection = () => {
         <Box
           sx={{
             display: "flex",
-            // flexDirection: { xs: "column", sm: "row", md: "row" },
             backgroundColor: "#010205",
             backgroundImage: "url(/assets/trafficBg.png)",
             backgroundSize: "cover",
@@ -216,20 +215,19 @@ const HeroSection = () => {
             padding: "20px 20px 0 20px",
             borderRadius: 2,
             color: "white",
-            alignItems: "flex-start",
+            alignItems: {xs: "center", md: "end"},
           }}
         >
           {/* Left Column with background image */}
           <Box
             sx={{
-              flex: 2,
               pr: { xs: 0, md: 4 },
               borderRadius: 2,
-              padding: "20px 20px 0",
+              padding: "0 0 30px 20px",
             }}
           >
             {/* Horizontal Line and Title */}
-            <Box sx={{ display: "flex", alignItems: "center", mb: 2 }}>
+            <Box sx={{ display: "flex", alignItems: "center", mb: 2}}>
               <Box
                 sx={{ height: 2, width: 50, backgroundColor: "#FFFFFF", mr: 2 }}
               />
@@ -248,7 +246,7 @@ const HeroSection = () => {
               sx={{
                 fontFamily: `'Plus Jakarta Sans', sans-serif`,
                 fontWeight: "600",
-                fontSize: { xs: "1.5rem", sm: "1.75rem", md: "2rem" }, // Using rem
+                fontSize: { xs: "1.2rem", sm: "1.5rem", md: "2rem" }, // Using rem
               }}
             >
               Drive more traffic and product sales
