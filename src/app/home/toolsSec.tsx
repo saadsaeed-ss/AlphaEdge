@@ -1,7 +1,7 @@
 "use client"; // This is a Client Component for Next.js
 
 import { Typography, Box } from "@mui/material";
-import React, { useState } from "react";
+import { useState } from "react"; // React is only needed for hooks like useState
 import Image from 'next/image'; // Next.js Image component
 
 const ToolsSec = () => {

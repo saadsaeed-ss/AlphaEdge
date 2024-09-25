@@ -1,4 +1,3 @@
-import React from "react";
 import { Box, Typography, Button, LinearProgress } from "@mui/material";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import Image from "next/image"; // Import Next.js Image component
@@ -26,7 +25,7 @@ const HeroSection = () => {
         <Typography
           variant="h2"
           sx={{
-            fontWeight: "600",
+            fontWeight: 600,
             mb: 4,
             fontFamily: `'Plus Jakarta Sans', sans-serif`,
             fontSize: {
@@ -34,7 +33,7 @@ const HeroSection = () => {
               sm: "3rem",
               md: "3.75rem",
               lg: "4.5rem",
-            }, // Using rem
+            },
           }}
         >
           Welcome to <br />
@@ -117,29 +116,27 @@ const HeroSection = () => {
             width: "100%",
           }}
         >
-          {/* Image */}
-          {/* Image */}
-<Box
-  sx={{
-    display: "flex",
-    padding: { xs: "0 0 20px 0", md: "0 20px 0 0" },
-    flex: 1.2,
-    width: { xs: "80%", sm: "50%", md: "50%" },
-  }}
->
-  <Image
-    src="/assets/heroSecImg1.png"
-    alt="Laptop Working"
-    width={500} // Original width
-    height={300} // Original height
-    style={{
-      maxWidth: "100%", // Ensure it doesn't exceed the container width
-      objectFit: "contain", // Maintains aspect ratio
-    }}
-    priority // Optional for hero images
-  />
-</Box>
-
+          {/* Hero Image */}
+          <Box
+            sx={{
+              display: "flex",
+              padding: { xs: "0 0 20px 0", md: "0 20px 0 0" },
+              flex: 1.2,
+              width: { xs: "80%", sm: "50%", md: "50%" },
+            }}
+          >
+            <Image
+              src="/assets/heroSecImg1.png"
+              alt="Laptop Working"
+              width={500}
+              height={300}
+              style={{
+                maxWidth: "100%",
+                objectFit: "contain",
+              }}
+              priority // Optional for hero images
+            />
+          </Box>
 
           {/* Colored Box with Title and Content */}
           <Box
@@ -167,7 +164,7 @@ const HeroSection = () => {
                     sm: "3rem",
                     md: "3.75rem",
                     lg: "4.5rem",
-                  }, // Using rem
+                  },
                 }}
               >
                 230+
@@ -185,7 +182,7 @@ const HeroSection = () => {
             </Box>
 
             {/* Progress Bar */}
-            <Box sx={{mt:5}}>
+            <Box sx={{ mt: 5 }}>
               <Box sx={{ width: "100%" }}>
                 <LinearProgress
                   variant="determinate"
@@ -215,7 +212,7 @@ const HeroSection = () => {
             padding: "20px 20px 0 20px",
             borderRadius: 2,
             color: "white",
-            alignItems: {xs: "center", md: "end"},
+            alignItems: { xs: "center", md: "end" },
           }}
         >
           {/* Left Column with background image */}
@@ -227,7 +224,7 @@ const HeroSection = () => {
             }}
           >
             {/* Horizontal Line and Title */}
-            <Box sx={{ display: "flex", alignItems: "center", mb: 2}}>
+            <Box sx={{ display: "flex", alignItems: "center", mb: 2 }}>
               <Box
                 sx={{ height: 2, width: 50, backgroundColor: "#FFFFFF", mr: 2 }}
               />
@@ -245,8 +242,8 @@ const HeroSection = () => {
               variant="h5"
               sx={{
                 fontFamily: `'Plus Jakarta Sans', sans-serif`,
-                fontWeight: "600",
-                fontSize: { xs: "1.2rem", sm: "1.5rem", md: "2rem" }, // Using rem
+                fontWeight: 600,
+                fontSize: { xs: "1.2rem", sm: "1.5rem", md: "2rem" },
               }}
             >
               Drive more traffic and product sales
@@ -259,7 +256,7 @@ const HeroSection = () => {
               flex: 0.8,
               display: "flex",
               alignItems: "flex-end",
-              justifyContent: "space-between",
+              justifyContent:{xs : "end",   md: "space-between"},
               height: "200px",
               gap: 1,
               mt: { xs: 3, md: 0 },

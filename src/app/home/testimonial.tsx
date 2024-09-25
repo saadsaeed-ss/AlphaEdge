@@ -3,7 +3,7 @@
 import { Box, Typography } from "@mui/material";
 import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
 import EastIcon from "@mui/icons-material/East";
-import React, { useRef } from "react"; 
+import { useRef } from "react"; 
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { Swiper as SwiperType } from "swiper";

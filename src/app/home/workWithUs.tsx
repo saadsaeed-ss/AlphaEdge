@@ -6,7 +6,7 @@ const WorkWithUs = () => {
   return (
     <Box
       sx={{
-        padding: { xs: "20px", md: "50px 80px" }, // Adjust padding for mobile and larger screens
+        padding: { xs: "20px", md: "50px 80px" }, 
       }}
     >
       <Box
@@ -15,12 +15,12 @@ const WorkWithUs = () => {
           flexDirection: "column",
           gap: 1,
           backgroundColor: "black",
-          padding: { xs: "30px 20px", md: "40px" }, // Adjust padding for mobile and desktop
+          padding: { xs: "30px 20px", md: "40px" }, 
           color: "#fff",
           borderRadius: 5,
-          backgroundImage: `url('/assets/WorkWithUsBg.png')`, // Ensure the correct path to the image
-          backgroundSize: "cover", // Make sure the image covers the entire area
-          backgroundPosition: "center", // Position the image properly
+          backgroundImage: `url('/assets/WorkWithUsBg.png')`, 
+          backgroundSize: "cover", 
+          backgroundPosition: "center", 
         }}
       >
         {/* Headline */}
@@ -29,8 +29,8 @@ const WorkWithUs = () => {
             fontSize: { xs: "24px", md: "35px" }, // Smaller font size on mobile, larger on desktop
             fontFamily: "'Plus Jakarta Sans', sans-serif",
             fontWeight: "600",
-            textAlign: { xs: "center", md: "left" }, // Center text on mobile, align left on larger screens
-            marginBottom: { xs: "20px", md: "10px" }, // Add bottom margin to separate elements
+            textAlign: { xs: "center", md: "left" },
+            marginBottom: { xs: "20px", md: "10px" },
           }}
         >
           Ready to work with us?
@@ -40,18 +40,18 @@ const WorkWithUs = () => {
         <Box
           sx={{
             display: "flex",
-            flexDirection: { xs: "column", md: "row" }, // Stack items vertically on mobile, horizontally on desktop
+            flexDirection: { xs: "column", md: "row" },
             justifyContent: { xs: "center", md: "space-between" },
-            alignItems: { xs: "center", md: "flex-start" }, // Align content to start on larger screens
-            textAlign: { xs: "center", md: "left" }, // Center text on mobile
+            alignItems: { xs: "center", md: "flex-start" },
+            textAlign: { xs: "center", md: "left" },
           }}
         >
           {/* Description Text */}
           <Typography
             sx={{
-              fontSize: { xs: "12px", md: "14px" }, // Smaller font size for mobile
+              fontSize: { xs: "12px", md: "14px" },
               fontFamily: "'Plus Jakarta Sans', sans-serif",
-              marginBottom: { xs: "20px", md: "0" }, // Add margin for spacing on mobile
+              marginBottom: { xs: "20px", md: "0" },
               maxWidth: { xs: "100%", md: "60%" }, // Limit text width on larger screens
             }}
           >
@@ -65,10 +65,10 @@ const WorkWithUs = () => {
             sx={{
               display: "flex",
               alignItems: "center",
-              marginTop: { xs: "0", md: "-25px" }, // No margin on mobile
+              marginTop: { xs: "0", md: "-25px" },
               gap: 5,
               color: "#000",
-              padding: { xs: "8px 12px", md: "10px 15px" }, // Smaller padding for mobile
+              padding: { xs: "8px 12px", md: "10px 15px" },
               backgroundColor: "#fff",
               borderRadius: 10,
               textTransform: "capitalize",

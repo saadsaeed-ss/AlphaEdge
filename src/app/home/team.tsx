@@ -1,7 +1,6 @@
 import { Container, Box, Button, Typography } from "@mui/material";
 import EastIcon from "@mui/icons-material/East";
-import React from "react";
-import Image from "next/image";
+import Image from "next/image"; // Correctly imports the Image component from Next.js
 
 const TeamSec = () => {
   const imagesArray = [
@@ -44,7 +43,7 @@ const TeamSec = () => {
 
   return (
     <>
-      <Box sx={{ marginTop: "60px", padding: { xs: "20px", md: "0px 80px" } ,  mb:10}}>
+      <Box sx={{ marginTop: "60px", padding: { xs: "20px", md: "0px 80px" }, mb: 10 }}>
         <Typography
           variant="h4"
           component="h2"
@@ -53,10 +52,10 @@ const TeamSec = () => {
             color: "#010205",
             paddingLeft: "7px",
             display: "flex",
-            justifyContent: "space-between",
+            justifyContent: { xs: "center", md: "space-between" },
             alignItems: "center",
             fontFamily: "'Plus Jakarta Sans', sans-serif",
-            textAlign: {xs:"center", md : "left"}
+            textAlign: { xs: "center", md: "left" },
           }}
         >
           Meet the Minds Behind the Innovation
@@ -66,21 +65,27 @@ const TeamSec = () => {
               alignItems: "center",
               gap: 1,
               color: "#000",
-              fontSize: "14px",
-              fontFamily: "'Plus Jakarta Sans', sans-serif",
-              padding: "10px 15px",
               border: "1px solid black",
               borderRadius: 10,
               textTransform: "capitalize",
             }}
           >
-            <Typography>See All</Typography>
-            <EastIcon />
+            <Typography
+              sx={{
+                fontSize: "14px",
+                fontFamily: "'Plus Jakarta Sans', sans-serif",
+                fontWeight: "600",
+                padding: "5px 20px",
+              }}
+            >
+              See All
+            </Typography>
+            <EastIcon sx={{ marginRight: "10px" }} />
           </Button>
         </Typography>
       </Box>
 
-      <Container maxWidth="xl" disableGutters sx={{ padding: { xs: "20px", md: "0 0 0 80px" }, fontFamily: "'Plus Jakarta Sans', sans-serif",  mb:10 }}>
+      <Container maxWidth="xl" disableGutters sx={{ padding: { xs: "20px", md: "0 0 0 80px" }, fontFamily: "'Plus Jakarta Sans', sans-serif", mb: 10 }}>
         <Box
           sx={{
             display: "flex",
@@ -108,9 +113,9 @@ const TeamSec = () => {
               <Image
                 src={item.img}
                 alt={item.name}
-                fill // Updated to use fill
-                style={{ objectFit: 'cover' }} // Updated objectFit
-                priority
+                fill // Use the fill prop for responsive images
+                style={{ objectFit: 'cover' }} // Maintain cover style
+                priority // Preload important images
               />
               <Box
                 sx={{
@@ -126,13 +131,7 @@ const TeamSec = () => {
                   {item.name}
                 </Typography>
                 <Typography sx={{ fontSize: "14px", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>{item.skill}</Typography>
-                <Box
-                  sx={{
-                    display: "flex",
-                    gap: 1,
-                    marginTop: "10px",
-                  }}
-                >
+                <Box sx={{ display: "flex", gap: 1, marginTop: "10px" }}>
                   {item.btn.map((buttonText, index) => (
                     <Button
                       key={index}
@@ -169,10 +168,11 @@ const TeamSec = () => {
               color: "#000",
               fontSize: "14px",
               fontFamily: "'Plus Jakarta Sans', sans-serif",
-              padding: "10px 15px",
+              padding: "5px 20px",
               border: "1px solid black",
               borderRadius: 10,
               textTransform: "capitalize",
+              marginTop: "20px",
             }}
           >
             <Typography>See All</Typography>

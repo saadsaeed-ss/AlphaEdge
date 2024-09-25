@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import Navbar from "@/components/common/Navbar";
+import Footer from "@/components/common/Footer";
 
 export const metadata: Metadata = {
   title: "AlphaEdge Solutions",
@@ -17,7 +19,9 @@ export default function RootLayout({
         {/* Additional meta tags or links can be added here */}
       </head>
       <body>
+        <Navbar/>
         {children}
+        <Footer/>
       </body>
     </html>
   );

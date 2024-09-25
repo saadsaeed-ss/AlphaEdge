@@ -1,4 +1,3 @@
-import React from "react";
 import { Typography, Box, Button } from "@mui/material";
 import Image from "next/image";
 
@@ -128,21 +127,6 @@ const Startup = () => {
                   marginTop: { xs: "20px", md: "40px" },
                   color: "#fff",
                   overflow: "hidden",
-                  // "&:hover::before": {
-                  //   opacity: 0.8, // Adjust overlay opacity on hover
-                  // },
-                  "::before": {
-                    content: '""',
-                    position: "absolute",
-                    top: 0,
-                    left: 0,
-                    width: "100%",
-                    height: "100%",
-                    background: "rgba(0, 0, 0, 0.5)", // Overlay color
-                    zIndex: 1,
-                    transition: "opacity 0.3s ease",
-                    opacity: 0.5, // Default opacity
-                  },
                 }}
               >
                 <Box
