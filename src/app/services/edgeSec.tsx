@@ -1,4 +1,3 @@
-import React from "react";
 import { Box, Typography, Button } from "@mui/material";
 import EastIcon from "@mui/icons-material/East";
 import KeyboardDoubleArrowRightIcon from "@mui/icons-material/KeyboardDoubleArrowRight";
@@ -27,7 +26,7 @@ const EdgeSec = () => {
             <Typography
               sx={{
                 fontWeight: 600,
-                fontSize: { xs: "32px", md: "48px" }, // Reduced size on smaller screens
+                fontSize:  "48px", // Reduced size on smaller screens
                 fontFamily: "'Plus Jakarta Sans', sans-serif",
               }}
             >

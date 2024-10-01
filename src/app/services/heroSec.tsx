@@ -51,7 +51,7 @@ const HeroSection = () => {
         <Typography
           sx={{
             fontWeight: 600,
-            fontSize: "35px",
+            fontSize: "48px",
             fontFamily: "'Plus Jakarta Sans', sans-serif",
           }}
         >
