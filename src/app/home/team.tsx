@@ -45,9 +45,10 @@ const TeamSec = () => {
     <>
       <Box sx={{ marginTop: "60px", padding: { xs: "20px", md: "0px 80px" }, mb: 10 }}>
         <Typography
-          variant="h4"
+          variant="h2"
           component="h2"
           sx={{
+            fontSize:"48px",
             fontWeight: 600,
             color: "#010205",
             paddingLeft: "7px",
@@ -56,6 +57,7 @@ const TeamSec = () => {
             alignItems: "center",
             fontFamily: "'Plus Jakarta Sans', sans-serif",
             textAlign: { xs: "center", md: "left" },
+            
           }}
         >
           Meet the Minds Behind the Innovation
