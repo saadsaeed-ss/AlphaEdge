@@ -18,6 +18,7 @@ interface BlogItem {
   time: string;
   heading: string;
   text: string;
+  link: string; // Add link property for navigation
 }
 
 const TrendingBlogSec = () => {
@@ -34,6 +35,7 @@ const TrendingBlogSec = () => {
         time: "4 min read",
         heading: "The Importance of Diversity and Inclusion in the Workplace",
         text: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.",
+        link: "/blog/diversity-inclusion", // Add respective links
       },
       {
         id: 2,
@@ -42,6 +44,7 @@ const TrendingBlogSec = () => {
         time: "6 min read",
         heading: "How to Build a Fintech Startup",
         text: "Explore the key steps and challenges in building a successful fintech startup in today’s digital landscape.",
+        link: "/blog/fintech-startup", // Add respective links
       },
       {
         id: 3,
@@ -50,6 +53,7 @@ const TrendingBlogSec = () => {
         time: "5 min read",
         heading: "Artificial Intelligence in Business",
         text: "Discover how AI is transforming industries by improving efficiency, decision-making, and customer experience.",
+        link: "/blog/ai-in-business", // Add respective links
       },
     ],
     [
@@ -60,6 +64,7 @@ const TrendingBlogSec = () => {
         time: "3 min read",
         heading: "Remote Work: The New Normal",
         text: "Learn about the benefits and challenges of remote work and how it’s changing the modern workplace.",
+        link: "/blog/remote-work", // Add respective links
       },
       {
         id: 5,
@@ -68,6 +73,7 @@ const TrendingBlogSec = () => {
         time: "7 min read",
         heading: "Blockchain Technology Explained",
         text: "An easy-to-understand guide to how blockchain technology works and its potential applications.",
+        link: "/blog/blockchain-explained", // Add respective links
       },
       {
         id: 6,
@@ -76,6 +82,7 @@ const TrendingBlogSec = () => {
         time: "8 min read",
         heading: "Sustainability in Business",
         text: "Find out how businesses are adopting sustainable practices to address environmental and social challenges.",
+        link: "/blog/sustainability-in-business", // Add respective links
       },
     ],
   ];
@@ -100,7 +107,7 @@ const TrendingBlogSec = () => {
   const isLastSlide = currentSlide === groupedFilteredBlogs.length - 1; // Determine if it's the last slide
 
   return (
-    <Box sx={{ marginTop: "60px", padding: { xs: "20px", md: "50px 80px" } }}>
+    <Box sx={{ marginTop: "60px" }}>
       <Box sx={{ display: "flex", flexDirection: "column", gap: 1, mb: 6 }}>
         <Box
           sx={{
@@ -168,9 +175,7 @@ const TrendingBlogSec = () => {
                         flex: "1 1 30%",
                         maxWidth: "30%",
                         minWidth: "30%",
-                        // borderRadius: "10px",
                         overflow: "hidden",
-                        boxShadow: "0 2px 8px rgba(0, 0, 0, 0.1)",
                         transition: "transform 0.3s ease",
                         "&:hover": {
                           transform: "translateY(-10px)",
@@ -178,7 +183,7 @@ const TrendingBlogSec = () => {
                         },
                       }}
                     >
-                      <a href="#">
+                      <a href={subItem.link} style={{ textDecoration: "none", color: "inherit" }}>
                         <Image
                           src={subItem.img}
                           alt={subItem.heading}

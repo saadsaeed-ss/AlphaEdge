@@ -25,7 +25,6 @@ const MiniBlog: React.FC<MiniBlogProps> = ({ image, date, readTime, title, link 
           display: "flex",
           flexDirection: { xs: "row", sm: "column", md: "row" },
           gap: 1,
-          // padding: "10px", // Add padding to improve clickability
           borderRadius: "10px",
           transition: "background-color 0.3s", // Add transition for hover effect
           "&:hover": {
@@ -98,21 +97,21 @@ const BlogHeroSec = () => {
       date: "Oct 22",
       readTime: "4 min read",
       title: "How to Travel on a Budget: See the world without breaking the bank.",
-      link: "/blogs/travel-on-budget", // Add respective links
+      link: "/blog/travel-on-budget", // Add respective links
     },
     {
       image: img3,
       date: "Oct 23",
       readTime: "5 min read",
       title: "The Secrets of Digital Marketing: Grow your online presence.",
-      link: "/blogs/digital-marketing-secrets", // Add respective links
+      link: "/blog/digital-marketing-secrets", // Add respective links
     },
     {
       image: img4,
       date: "Oct 24",
       readTime: "3 min read",
       title: "Healthy Living: Tips to balance your life and work effectively.",
-      link: "/blogs/healthy-living-tips", // Add respective links
+      link: "/blog/healthy-living-tips", // Add respective links
     },
   ];
 
@@ -152,6 +151,7 @@ const BlogHeroSec = () => {
             flexDirection: { xs: "column", md: "row" },
           }}
         >
+          {/* Hero Blog Section */}
           <Box
             sx={{
               width: { xs: "100%", md: "60%" },
@@ -162,81 +162,85 @@ const BlogHeroSec = () => {
               position: "relative",
             }}
           >
-            <Image
-              src={img1}
-              alt="Blog Image 1"
-              layout="fill"
-              objectFit="cover"
-              style={{ borderRadius: "10px" }}
-            />
+            {/* Updated Link for the Hero Blog */}
+            <a href="/blog/benefits-of-meditation" style={{ textDecoration: "none", color: "inherit" }}>
+              <Image
+                src={img1}
+                alt="Blog Image 1"
+                layout="fill"
+                objectFit="cover"
+                style={{ borderRadius: "10px" }}
+              />
 
-            <Box
-              sx={{
-                position: "absolute",
-                bottom: "-20%",
-                width: "90%",
-                backgroundColor: "white",
-                borderTopRightRadius: "10px",
-                borderBottomRightRadius: "10px",
-                display: { xs: "block", sm: "block", md: "flex" },
-                flexDirection: "column",
-                alignItems: "start",
-                padding: "20px 30px 20px",
-              }}
-            >
               <Box
                 sx={{
-                  display: "flex",
-                  gap: 1,
-                  color: "#878C91",
-                  fontSize: "12px",
-                  alignItems: "center",
+                  position: "absolute",
+                  bottom: "-20%",
+                  width: "90%",
+                  backgroundColor: "white",
+                  borderTopRightRadius: "10px",
+                  borderBottomRightRadius: "10px",
+                  display: { xs: "block", sm: "block", md: "flex" },
+                  flexDirection: "column",
+                  alignItems: "start",
+                  padding: "20px 30px 20px",
                 }}
               >
+                <Box
+                  sx={{
+                    display: "flex",
+                    gap: 1,
+                    color: "#878C91",
+                    fontSize: "12px",
+                    alignItems: "center",
+                  }}
+                >
+                  <Typography
+                    sx={{
+                      fontSize: "16px",
+                      fontFamily: "'Plus Jakarta Sans', sans-serif",
+                    }}
+                  >
+                    Oct 22
+                  </Typography>
+                  <AccessTimeIcon sx={{ fontSize: "20px" }} />
+                  <Typography
+                    sx={{
+                      fontSize: "16px",
+                      fontFamily: "'Plus Jakarta Sans', sans-serif",
+                    }}
+                  >
+                    4 min read
+                  </Typography>
+                </Box>
                 <Typography
                   sx={{
-                    fontSize: "16px",
+                    fontSize: "30px",
+                    fontWeight: "600",
+                    color: "#121212",
+                    margin: "10px 0",
                     fontFamily: "'Plus Jakarta Sans', sans-serif",
                   }}
                 >
-                  Oct 22
+                  The Benefits of Meditation: Improve mental health with simple
+                  practices.
                 </Typography>
-                <AccessTimeIcon sx={{ fontSize: "20px" }} />
                 <Typography
                   sx={{
+                    color: "#878C91",
                     fontSize: "16px",
                     fontFamily: "'Plus Jakarta Sans', sans-serif",
                   }}
                 >
-                  4 min read
+                  We are a passionate team of digital marketing enthusiasts
+                  dedicated to helping businesses succeed in the digital world.
+                  With years of experience and a deep understanding
                 </Typography>
               </Box>
-              <Typography
-                sx={{
-                  fontSize: "30px",
-                  fontWeight: "600",
-                  color: "#121212",
-                  margin: "10px 0",
-                  fontFamily: "'Plus Jakarta Sans', sans-serif",
-                }}
-              >
-                The Benefits of Meditation: Improve mental health with simple
-                practices.
-              </Typography>
-              <Typography
-                sx={{
-                  color: "#878C91",
-                  fontSize: "16px",
-                  fontFamily: "'Plus Jakarta Sans', sans-serif",
-                }}
-              >
-                We are a passionate team of digital marketing enthusiasts
-                dedicated to helping businesses succeed in the digital world.
-                With years of experience and a deep understanding
-              </Typography>
-            </Box>
+            </a>
           </Box>
 
+          {/* Mini Blogs Section */}
           <Box
             sx={{
               width: { xs: "100%", md: "35%" },

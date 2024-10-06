@@ -1,6 +1,5 @@
 "use client"; // This ensures the component is treated as a client component
 
-import React from "react";
 import {
   Container,
   Box,
@@ -8,7 +7,6 @@ import {
   FormControl,
   InputLabel,
   Input,
-  Button,
 } from "@mui/material";
 import { useForm } from "react-hook-form";
 import { useRouter } from "next/navigation"; // Correct import for Next.js App Router
@@ -28,7 +26,7 @@ const Contactus = () => {
   };
 
   return (
-    <Container sx={{ marginTop: "60px", fontFamily: `'Plus Jakarta Sans', sans-serif` }}>
+    <Box sx={{ marginTop: "60px", padding: { xs: "20px", md: "50px 80px" } }}>
       <form onSubmit={handleSubmit(onSubmit)}>
         <Box
           sx={{
@@ -46,26 +44,30 @@ const Contactus = () => {
               order: { xs: 2, md: 1 },
             }}
           >
+            {/* Title with Plus Jakarta Sans font */}
             <Typography
               sx={{
                 fontWeight: "600",
                 fontSize: "48px",
-                fontFamily: "'Plus Jakarta Sans', sans-serif",
+                fontFamily: "'Plus Jakarta Sans', sans-serif", // Apply Plus Jakarta Sans font
               }}
             >
               Contact Us
             </Typography>
+
+            {/* Subtitle with Plus Jakarta Sans font */}
             <Typography
               sx={{
                 fontSize: "16px",
                 fontWeight: "medium",
                 color: "#878C91",
-                fontFamily: `'Plus Jakarta Sans', sans-serif`,
+                fontFamily: "'Plus Jakarta Sans', sans-serif", // Apply Plus Jakarta Sans font
               }}
             >
               We're Here to Help – Reach Out to Our Team for Any Inquiries or
               Support Needs
             </Typography>
+
             <Box
               sx={{
                 marginTop: "20px",
@@ -76,6 +78,7 @@ const Contactus = () => {
                 gap: { xs: 3, sm: 7, md: 3 },
               }}
             >
+              {/* Email Input */}
               <FormControl
                 sx={{ width: { xs: "100%", sm: "45%", md: "100%" } }}
               >
@@ -85,7 +88,7 @@ const Contactus = () => {
                     fontSize: "14px",
                     color: "#878C91",
                     marginLeft: "-12px",
-                    fontFamily: `'Plus Jakarta Sans', sans-serif`,
+                    fontFamily: "'Plus Jakarta Sans', sans-serif", // Apply Plus Jakarta Sans font
                   }}
                 >
                   Email
@@ -95,16 +98,17 @@ const Contactus = () => {
                   id="email-input"
                   {...register("email", { required: "Email is required" })}
                   aria-describedby="email-helper-text"
+                  sx={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }} // Apply Plus Jakarta Sans font
                 />
                 {errors.email?.message &&
                   typeof errors.email.message === "string" && (
                     <span
                       style={{
-                        textAlign: "center",
+                        // textAlign: "center",
                         fontSize: "12px",
                         color: "red",
                         marginTop: "7px",
-                        fontFamily: `'Plus Jakarta Sans', sans-serif`,
+                        fontFamily: "'Plus Jakarta Sans', sans-serif", // Apply Plus Jakarta Sans font
                       }}
                     >
                       {errors.email.message}
@@ -112,6 +116,7 @@ const Contactus = () => {
                   )}
               </FormControl>
 
+              {/* Name Input */}
               <FormControl
                 sx={{ width: { xs: "100%", sm: "45%", md: "100%" } }}
               >
@@ -121,7 +126,7 @@ const Contactus = () => {
                     fontSize: "14px",
                     color: "#878C91",
                     marginLeft: "-12px",
-                    fontFamily: `'Plus Jakarta Sans', sans-serif`,
+                    fontFamily: "'Plus Jakarta Sans', sans-serif", // Apply Plus Jakarta Sans font
                   }}
                 >
                   Name
@@ -131,16 +136,17 @@ const Contactus = () => {
                   id="name-input"
                   aria-describedby="name-helper-text"
                   {...register("name", { required: "Name is required" })}
+                  sx={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }} // Apply Plus Jakarta Sans font
                 />
                 {errors.name?.message &&
                   typeof errors.name.message === "string" && (
                     <span
                       style={{
-                        textAlign: "center",
+                        // textAlign: "center",
                         fontSize: "12px",
                         color: "red",
                         marginTop: "7px",
-                        fontFamily: `'Plus Jakarta Sans', sans-serif`,
+                        fontFamily: "'Plus Jakarta Sans', sans-serif", // Apply Plus Jakarta Sans font
                       }}
                     >
                       {errors.name.message}
@@ -148,6 +154,7 @@ const Contactus = () => {
                   )}
               </FormControl>
 
+              {/* Phone Input */}
               <FormControl
                 sx={{ width: { xs: "100%", sm: "45%", md: "100%" } }}
               >
@@ -157,7 +164,7 @@ const Contactus = () => {
                     fontSize: "14px",
                     color: "#878C91",
                     marginLeft: "-12px",
-                    fontFamily: `'Plus Jakarta Sans', sans-serif`,
+                    fontFamily: "'Plus Jakarta Sans', sans-serif", // Apply Plus Jakarta Sans font
                   }}
                 >
                   Phone
@@ -169,16 +176,17 @@ const Contactus = () => {
                   type="tel"
                   id="phone-input"
                   aria-describedby="phone-helper-text"
+                  sx={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }} // Apply Plus Jakarta Sans font
                 />
                 {errors.phone?.message &&
                   typeof errors.phone.message === "string" && (
                     <span
                       style={{
-                        textAlign: "center",
+                        // textAlign: "center",
                         fontSize: "12px",
                         color: "red",
                         marginTop: "7px",
-                        fontFamily: `'Plus Jakarta Sans', sans-serif`,
+                        fontFamily: "'Plus Jakarta Sans', sans-serif", // Apply Plus Jakarta Sans font
                       }}
                     >
                       {errors.phone.message}
@@ -186,6 +194,7 @@ const Contactus = () => {
                   )}
               </FormControl>
 
+              {/* Message Input */}
               <FormControl
                 sx={{ width: { xs: "100%", sm: "45%", md: "100%" } }}
               >
@@ -195,7 +204,7 @@ const Contactus = () => {
                     fontSize: "14px",
                     color: "#878C91",
                     marginLeft: "-12px",
-                    fontFamily: `'Plus Jakarta Sans', sans-serif`,
+                    fontFamily: "'Plus Jakarta Sans', sans-serif", // Apply Plus Jakarta Sans font
                   }}
                 >
                   Message
@@ -207,16 +216,17 @@ const Contactus = () => {
                   type="text"
                   id="msg-input"
                   aria-describedby="msg-helper-text"
+                  sx={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }} // Apply Plus Jakarta Sans font
                 />
                 {errors.message?.message &&
                   typeof errors.message.message === "string" && (
                     <span
                       style={{
-                        textAlign: "center",
+                        // textAlign: "center",
                         fontSize: "12px",
                         color: "red",
                         marginTop: "7px",
-                        fontFamily: `'Plus Jakarta Sans', sans-serif`,
+                        fontFamily: "'Plus Jakarta Sans', sans-serif", // Apply Plus Jakarta Sans font
                       }}
                     >
                       {errors.message.message}
@@ -224,6 +234,7 @@ const Contactus = () => {
                   )}
               </FormControl>
 
+              {/* Submit Button with Icon */}
               <button
                 type="submit"
                 style={{
@@ -233,38 +244,39 @@ const Contactus = () => {
                   cursor: "pointer",
                   display: "flex",
                   alignItems: "center",
-                  padding: "5px 15px",
+                  padding: "10px 20px",
                   borderRadius: "50px",
-                  fontFamily: `'Plus Jakarta Sans', sans-serif`,
+                  fontFamily: "'Plus Jakarta Sans', sans-serif", // Apply Plus Jakarta Sans font
                 }}
               >
                 Send
-                <EastIcon sx={{ color: "#fff", marginLeft: "15px" }} />
+                <EastIcon sx={{ color: "#fff", marginLeft: "30px" }} />
               </button>
             </Box>
           </Box>
+
+          {/* Google Maps Iframe */}
           <Box
             sx={{
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
-              width: { xs: "100%", md: "55%" }, // Increased size for the map
-              height: "400px", // Increase map height
+              width: { xs: "100%", md: "50%" }, // Increase the width on larger screens
               order: { xs: 1, md: 2 },
             }}
           >
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24142.293895231923!2d-0.14822161455170408!3d51.50694938613882!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487604cbf302d2af%3A0xbedf0b9b708ed1d5!2sLondon%2C%20UK!5e0!3m2!1sen!2s!4v1727275697187!5m2!1sen!2s"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10400.449946199482!2d-0.12762568566257623!3d51.507350379635455!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48761b30f0ff55cd%3A0x49e2c59cbf1e685!2sLondon%2C%20UK!5e0!3m2!1sen!2s!4v1727275697187!5m2!1sen!2s"
               width="100%"
-              height="100%"
-              allowFullScreen={true}
+              height="450" // Increased the height
+              style={{ border: 0 }}
+              allowFullScreen={false}
               loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
             ></iframe>
           </Box>
         </Box>
       </form>
-    </Container>
+    </Box>
   );
 };
 
