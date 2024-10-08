@@ -1,16 +1,23 @@
 "use client"; // This ensures the component is treated as a client component
 
 import {
-  Container,
   Box,
   Typography,
   FormControl,
   InputLabel,
   Input,
 } from "@mui/material";
-import { useForm } from "react-hook-form";
+import { useForm, SubmitHandler } from "react-hook-form"; // Import SubmitHandler for type safety
 import { useRouter } from "next/navigation"; // Correct import for Next.js App Router
 import EastIcon from "@mui/icons-material/East";
+
+// Define an interface for form data
+interface FormData {
+  email: string;
+  name: string;
+  phone: string;
+  message: string;
+}
 
 const Contactus = () => {
   const router = useRouter(); // Use Next.js router from 'next/navigation'
@@ -18,9 +25,10 @@ const Contactus = () => {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm();
+  } = useForm<FormData>(); // Pass the FormData type to useForm
 
-  const onSubmit = (data: any) => {
+  // Use the defined type in the onSubmit function
+  const onSubmit: SubmitHandler<FormData> = (data) => {
     console.log(data);
     router.push("/querySuccess"); // Navigate to another page using router.push
   };
@@ -64,8 +72,8 @@ const Contactus = () => {
                 fontFamily: "'Plus Jakarta Sans', sans-serif", // Apply Plus Jakarta Sans font
               }}
             >
-              We're Here to Help – Reach Out to Our Team for Any Inquiries or
-              Support Needs
+               We&apos;re Here to Help &ndash; Reach Out to Our Team for Any Inquiries or Support Needs
+
             </Typography>
 
             <Box
@@ -104,7 +112,6 @@ const Contactus = () => {
                   typeof errors.email.message === "string" && (
                     <span
                       style={{
-                        // textAlign: "center",
                         fontSize: "12px",
                         color: "red",
                         marginTop: "7px",
@@ -142,7 +149,6 @@ const Contactus = () => {
                   typeof errors.name.message === "string" && (
                     <span
                       style={{
-                        // textAlign: "center",
                         fontSize: "12px",
                         color: "red",
                         marginTop: "7px",
@@ -182,7 +188,6 @@ const Contactus = () => {
                   typeof errors.phone.message === "string" && (
                     <span
                       style={{
-                        // textAlign: "center",
                         fontSize: "12px",
                         color: "red",
                         marginTop: "7px",
@@ -222,7 +227,6 @@ const Contactus = () => {
                   typeof errors.message.message === "string" && (
                     <span
                       style={{
-                        // textAlign: "center",
                         fontSize: "12px",
                         color: "red",
                         marginTop: "7px",
